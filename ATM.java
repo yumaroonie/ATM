@@ -28,4 +28,13 @@ public class ATM{
         }
         accountMap.remove (userId);
     }
+
+    public double checkBalance (String userId) throws Exception
+    {
+        if (!accountMap.containsKey (userId))
+        {
+            throw new java.lang.Error ("No account found with this email.");
+        }
+        return accountMap.get (userId);
+    }
 }
