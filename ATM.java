@@ -57,4 +57,15 @@ public class ATM{
         accountMap.put (userId, accountMap.get (userId) - amount);
         return amount;
     }
+
+    public boolean transferMoney (String fromAccount, String toAccount, double amount)
+    {
+        if (!accountMap.containsKey (fromAccount) || !accountMap.containsKey (toAccount) || accountMap.get (fromAccount) < amount)
+        {
+            return false;
+        }
+        accountMap.put (fromAccount, accountMap.get (fromAccount) - amount);
+        accountMap.put (toAccount, accountMap.get (toAccount) + amount);
+        return true;
+    }
 }
