@@ -10,4 +10,13 @@ public class ATM{
     {
         accountMap = new HashMap <String, Double> ();
     }
+
+    public void openAccount (String userId, double amount) throws Exception
+    {
+        if (accountMap.containsKey (userId))
+        {
+            throw new java.lang.Error ("An account with the email \"" + userId + "\" already exists.");
+        }
+        accountMap.put (userId, amount);
+    }
 }
