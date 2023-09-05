@@ -19,4 +19,13 @@ public class ATM{
         }
         accountMap.put (userId, amount);
     }
+
+    public void closeAccount (String userId) throws Exception
+    {
+        if (accountMap.get (userId) != 0)
+        {
+            throw new java.lang.Error ("Balance must be withdrawn prior to account closure.");
+        }
+        accountMap.remove (userId);
+    }
 }
