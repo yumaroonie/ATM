@@ -47,4 +47,14 @@ public class ATM{
         accountMap.put (userId, accountMap.get (userId) + amount);
         return amount;
     }
+
+    public double withdrawMoney (String userId, double amount) throws Exception
+    {
+        if ((!accountMap.containsKey (userId)) || accountMap.get (userId) < amount)
+        {
+            throw new java.lang.Error ("You're broke AF.");
+        }
+        accountMap.put (userId, accountMap.get (userId) - amount);
+        return amount;
+    }
 }
