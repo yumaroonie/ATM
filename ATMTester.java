@@ -32,16 +32,28 @@ public class ATMTester {
                                                                                                             // 550.0
             workingFunctions++;
 
+            bank.openAccount("user101@aol.com", 42069);
+            bank.openAccount("user102@aol.com", 2);
+            bank.openAccount("user103@aol.com", 1010);
+            bank.openAccount("user104@aol.com", 389);
+            bank.openAccount("user105@aol.com", 2389);
+            bank.withdrawMoney("user103@aol.com",bank.checkBalance("user103@aol.com"));
+            bank.closeAccount("user103@aol.com");
+            bank.transferMoney("user101@aol.com", "user102@aol.com", 69);
+
             bank.audit();
             workingFunctions++;
 
             System.out.println("Audit completed successfully.");
-            verifyAuditFile("AccountAudit.txt", 2);
+            verifyAuditFile("AccountAudit.txt", 6);
+
+            
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             System.out.println("Valid Use Cases: " + workingFunctions);
         }
+
     }
 
     private static void verifyAuditFile(String fileName, int expectedEntries) {

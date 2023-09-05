@@ -1,2 +1,6 @@
+user102@aol.com: 71.0
+user104@aol.com: 389.0
+user105@aol.com: 2389.0
 user2@example.com: 550.0
+user101@aol.com: 42000.0
 user1@example.com: 1050.0
