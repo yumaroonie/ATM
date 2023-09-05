@@ -68,4 +68,16 @@ public class ATM{
         accountMap.put (toAccount, accountMap.get (toAccount) + amount);
         return true;
     }
+
+    public void audit () throws IOException
+    {
+        FileWriter writer = new FileWriter("AccountAudit.txt",false);
+        PrintWriter out = new PrintWriter(writer);
+        for (String key : accountMap.keySet ())
+        {
+            out.println (key + ": " + accountMap.get (key));
+        }
+        writer.close ();
+        out.close ();
+    }
 }
